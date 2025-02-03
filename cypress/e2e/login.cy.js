@@ -1,10 +1,13 @@
 /// <reference types='cypress'/>
 
 describe('login', () => {
-  it('deve logar com sucesso', () => {
+  beforeEach(() => {
     cy.viewport(1920, 1080);
     cy.visit('https://playground.cyskills.com.br');
     cy.contains('h2', 'Faça login').should('be.visible');
+  })
+
+  it('deve logar com sucesso', () => {
     cy.get('[data-cy="email"]').type('papito@cyskills.com.br');
     cy.get('[data-cy="password"]').type('showtime');
     cy.get('[data-cy="login-button"]').click();
@@ -14,9 +17,6 @@ describe('login', () => {
   });
 
   it('não deve logar com sucesso', () => {
-    cy.viewport(1920, 1080);
-    cy.visit('https://playground.cyskills.com.br');
-    cy.contains('h2', 'Faça login').should('be.visible');
     cy.get('[data-cy="email"]').type('papito@cyskills.com.br');
     cy.get('[data-cy="password"]').type('abc123');
     cy.get('[data-cy="login-button"]').click();
@@ -26,9 +26,6 @@ describe('login', () => {
   });
 
   it('não deve logar com e-mail não cadastrado', () => {
-    cy.viewport(1920, 1080);
-    cy.visit('https://playground.cyskills.com.br');
-    cy.contains('h2', 'Faça login').should('be.visible');
     cy.get('[data-cy="email"]').type('404@cyskills.com.br');
     cy.get('[data-cy="password"]').type('abc123');
     cy.get('[data-cy="login-button"]').click();
@@ -38,9 +35,6 @@ describe('login', () => {
   });
 
   it('não deve logar com e-mail incorreto', () => {
-    cy.viewport(1920, 1080);
-    cy.visit('https://playground.cyskills.com.br');
-    cy.contains('h2', 'Faça login').should('be.visible');
     cy.get('[data-cy="email"]').type('www.cyskills.com.br');
     cy.get('[data-cy="password"]').type('abc123');
     cy.get('[data-cy="login-button"]').click();
