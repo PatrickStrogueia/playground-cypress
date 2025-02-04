@@ -14,10 +14,12 @@ describe('select', () => {
     });
 
     it('deve selecionar as linguagens que utilizam node.js', () => {
-        const langs = ['JavaScript', 'TypeScript'];
+        // const langs = ['JavaScript', 'TypeScript'];
+        const langs = ['Java', 'TypeScript'];
         cy.get('input[placeholder^="Linguagens de programação"]').click();
         langs.forEach(lang => {
-            cy.contains('.option-item', lang).click();
+            cy.contains('.option-item', new RegExp("^" + lang + "$")).click();
         });
+        cy.get('.language-item').should('have.length', langs.length);
     });
 });
