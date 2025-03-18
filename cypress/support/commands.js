@@ -4,6 +4,12 @@ Cypress.Commands.add('goHome', () => {
     cy.contains('h2', 'Faça login').should('be.visible');
 });
 
+// Helper
+Cypress.Commands.add('doLogin', () => {
+    cy.login('papito@cyskills.com.br', 'showtime');
+    cy.userLoggedIn();
+});
+
 Cypress.Commands.add('login', (email, password) => {
     if (email) {
         cy.get('[data-cy="email"]').type(email);

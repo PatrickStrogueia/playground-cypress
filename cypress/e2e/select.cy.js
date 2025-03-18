@@ -1,8 +1,7 @@
 describe('select', () => {
     beforeEach(() => {
         cy.goHome();
-        cy.login('papito@cyskills.com.br', 'showtime');
-        cy.userLoggedIn();
+        cy.doLogin();
         cy.goTo('/select', 'Select');
     });
 
