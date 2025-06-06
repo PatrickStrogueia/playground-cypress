@@ -2,9 +2,22 @@
   "name": "playground-cypress",
   "packageManager": "yarn@4.6.0",
   "devDependencies": {
-    "cypress": "^14.0.1"
+    "cypress": "^14.4.1"
   },
   "scripts": {
-    "cy:open": "yarn cypress open"
-  }
+    "cy:open": "npx cypress open"
+  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "cypress.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatrickStrogueia/playground-cypress.git"
+  },
+  "author": "Patrick Strogueia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PatrickStrogueia/playground-cypress/issues"
+  },
+  "homepage": "https://github.com/PatrickStrogueia/playground-cypress#readme"
 }
