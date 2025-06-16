@@ -34,4 +34,13 @@ describe('tables', () => {
         cy.get('table tbody')
             .should('contain', name);
     });
+
+    it.only('deve validar o link que abre o Instagram em outra aba', () => {
+        const id = 'instapapito';
+
+        cy.contains('table tbody tr', id)
+            .contains('a', 'Visitar')
+            .should('have.attr', 'href', 'https://instagram.com/instapapito')
+            .and('have.attr', 'target', '_blank');
+    });
 });
