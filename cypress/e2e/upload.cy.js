@@ -14,7 +14,7 @@ describe('upload', () => {
             });
     });
 
-    it.only('deve anexar uma imagem', () => {
+    it('deve anexar uma imagem', () => {
         cy.get('input[name="photo"]')
             .selectFile('cypress/fixtures/liga.jpg')
             .then(element => {
